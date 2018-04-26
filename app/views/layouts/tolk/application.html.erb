@@ -13,12 +13,27 @@
     <title>Tolk</title>
   </head>
   <body>
-    <h1>Hello, world!</h1>
-    <div id="container">
-    <div id="head">
-      <h1><span class="home"><%= link_to "Tolk", root_path %></span><% if @locale.present? %><span class="locale"><%= link_to @locale.language_name, locale_path(@locale) %></span><% end %><span class="locale"><%= button_to "Apply Changes", dump_all_locales_path, :method => :post, :class => "apply" %></span></h1>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+      <%= link_to "@uidu / Tolk", root_path, class: 'navbar-brand' %>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <span class="navbar-text">
+          <%- if @locale.present? -%>
+            <span class="locale"><%= link_to @locale.language_name, locale_path(@locale) %></span>
+          <%- end -%>
+          <span class="locale"></span>
+        </span>
+        <form class="form-inline my-2 my-lg-0">
+          <%= button_to "Apply Changes", dump_all_locales_path, :method => :post, :class => "apply btn btn-outline-success" %>
+        </form>
+      </div>
+    </nav>
+    <div class="container">
+      <%= yield %>
     </div>
-    <%= yield %>
   </div>
 
     <!-- Optional JavaScript -->
