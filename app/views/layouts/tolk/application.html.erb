@@ -1,24 +1,32 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="<%= Tolk::Locale.primary_locale_name %>">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-<head>
-  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-  <title>Tolk</title>
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css" integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4" crossorigin="anonymous">
 
-  <%= stylesheet_link_tag "tolk/application" %>
-
-  <%= yield :head %>
-</head>
-
-<body>
-  <div id="container">
+    <%= stylesheet_link_tag "tolk/application" %>
+    <%= yield :head %>
+    <title>Tolk</title>
+  </head>
+  <body>
+    <h1>Hello, world!</h1>
+    <div id="container">
     <div id="head">
       <h1><span class="home"><%= link_to "Tolk", root_path %></span><% if @locale.present? %><span class="locale"><%= link_to @locale.language_name, locale_path(@locale) %></span><% end %><span class="locale"><%= button_to "Apply Changes", dump_all_locales_path, :method => :post, :class => "apply" %></span></h1>
     </div>
     <%= yield %>
   </div>
 
-  <%= javascript_include_tag "tolk/libraries" %>
-  <%= javascript_include_tag "tolk/application" %>
-</body>
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js" integrity="sha384-cs/chFZiN24E4KMATLdqdvsezGxaGsi4hLGOzlXwp5UZB1LY//20VyM2taTB4QvJ" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js" integrity="sha384-uefMccjFJAIv6A+rW+L4AHf99KvxDjWSu1z9VI8SKNVmz4sk7buKt/6v9KI65qnm" crossorigin="anonymous"></script>
+    <%= javascript_include_tag "tolk/libraries" %>
+    <%= javascript_include_tag "tolk/application" %>
+  </body>
 </html>
