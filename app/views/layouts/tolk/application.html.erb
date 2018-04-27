@@ -8,33 +8,32 @@
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css" integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4" crossorigin="anonymous">
 
-    <%# stylesheet_link_tag "tolk/application" %>
+    <%= stylesheet_link_tag "tolk/application" %>
     <%= yield :head %>
     <title>Tolk</title>
   </head>
   <body>
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
-      <%= link_to "@uidu / Tolk", root_path, class: 'navbar-brand' %>
-      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark py-4">
+      <div class="container">
+        <%= link_to "@uidu / Tolk", root_path, class: 'navbar-brand' %>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
 
-      <div class="collapse navbar-collapse" id="navbarSupportedContent">
-        <span class="navbar-text">
-          <%- if @locale.present? -%>
-            <span class="locale"><%= link_to @locale.language_name, locale_path(@locale) %></span>
-          <%- end -%>
-          <span class="locale"></span>
-        </span>
-        <form class="form-inline my-2 my-lg-0">
-          <%= button_to "Apply Changes", dump_all_locales_path, :method => :post, :class => "apply btn btn-outline-success" %>
-        </form>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <span class="navbar-text">
+            <%- if @locale.present? -%>
+              <span class="locale"><%= link_to @locale.language_name, locale_path(@locale) %></span>
+            <%- end -%>
+            <span class="locale"></span>
+          </span>
+          <form class="form-inline my-2 my-lg-0 ml-auto">
+            <%= button_to "Apply Changes", dump_all_locales_path, :method => :post, :class => "apply btn btn-success" %>
+          </form>
+        </div>
       </div>
     </nav>
-    <div class="container">
-      <%= yield %>
-    </div>
-  </div>
+    <%= yield %>
 
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->

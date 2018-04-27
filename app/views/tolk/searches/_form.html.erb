@@ -1,10 +1,16 @@
-<%= form_tag tolk.search_path, :method => :get do %>
+<%= form_tag tolk.search_path, :method => :get, class: 'form-inline' do %>
   <%= hidden_field_tag :tolk_locale, locale.name %>
-  Search for
-  <%= scope_selector_for(@locale) %>
-  phrase:
-  <%= text_field_tag :q, params[:q] %>
-  within key:
-  <%= text_field_tag :k, params[:k] %>
-  <%= submit_tag "Search", :name => nil %>
+  <div class="form-group mr-3">
+    <label class="mr-2">Search for</label>
+    <%= scope_selector_for(@locale) %>
+  </div>
+  <div class="form-group mr-3">
+    <label class="mr-2">phrase:</label>
+    <%= text_field_tag :q, params[:q], class: 'form-control' %>
+  </div>
+  <div class="form-group mr-3">
+    <label class="mr-2">within key:</label>
+    <%= text_field_tag :k, params[:k], class: 'form-control' %>
+  </div>
+  <%= submit_tag "Search", :name => nil, class: 'btn btn-primary' %>
 <% end %>
