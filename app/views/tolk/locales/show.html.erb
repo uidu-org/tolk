@@ -9,13 +9,13 @@
       <small><%= link_to 'See completed', tolk.all_locale_path(@locale) %></small>
     </h3>
 
-  <% if @locale.has_updated_translations? && action_name != 'updated' %>
-    <span class="notice">Some phrases have changed. <%= link_to "Update translations", tolk.updated_locale_path(@locale) %>.</span>
-  <% end %>
+    <% if @locale.has_updated_translations? && action_name != 'updated' %>
+      <span class="notice">Some phrases have changed. <%= link_to "Update translations", tolk.updated_locale_path(@locale) %>.</span>
+    <% end %>
 
-  <div class="search">
-    <%= render :partial => "tolk/searches/form", :locals => { :locale => @locale } %>
-  </div>
+    <div class="search">
+      <%= render :partial => "tolk/searches/form", :locals => { :locale => @locale } %>
+    </div>
   </div>
 </div>
 
