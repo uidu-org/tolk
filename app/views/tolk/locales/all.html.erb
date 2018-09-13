@@ -1,3 +1,4 @@
+
 <div class="bg-light p-4">
   <div class="container">
     <h3 class="switch d-flex align-items-center justify-content-between mb-4">
@@ -15,8 +16,16 @@
   </div>
 </div>
 
-<% if @locale.has_updated_translations? && action_name != 'updated' %>
-  <span class="notice">Some phrases have changed. <%= link_to "Update translations", tolk.updated_locale_path(@locale) %>.</span>
+<% if @locale.has_updated_translations? %>
+  <% if action_name == 'updated' %>
+    <div class="notice">
+      ⚠ Some phrases have changed. Update translations below.
+    </div>
+  <% else %>
+    <div class="notice">
+      ⚠ Some phrases have changed. <%= link_to "Update translations", tolk.updated_locale_path(@locale) %>.
+    </div>
+  <% end %>
 <% end %>
 
 <div class="container my-5">
@@ -80,4 +89,3 @@
     <% end %>
   </div>
 </div>
-
