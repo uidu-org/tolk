@@ -14,8 +14,7 @@ $black: #000;
 $light: $gray-200;
 
 // Color system
-$theme-colors: (
-  primary: #ec8447,
+$theme-colors: (primary: #ec8447,
   calls: #00cfd2,
   contacts: #aba9b4,
   donations: #26a69a,
@@ -25,22 +24,19 @@ $theme-colors: (
   forms: #fe7044,
   stories: #ef4e6d,
   memberships: #c6e1a5,
-  tax-returns: #6495ed
-);
+  tax-returns: #6495ed);
 // Options
 
 $enable-caret: true;
 
 // Spacing
 $spacer: 0.89rem;
-$sizes: (
-  10: 10%,
+$sizes: (10: 10%,
   25: 25%,
   50: 50%,
   75: 75%,
   90: 90%,
-  100: 100%
-);
+  100: 100%);
 
 // Body
 
@@ -51,11 +47,11 @@ $sizes: (
 // Grid breakpoints
 
 // Grid containers
-$container-max-widths: (
-  sm: 100%,
-  md: 100%,
-  lg: 100%,
-  xl: 1200px
+$container-max-widths: (xs: 0,
+  sm: 576px,
+  md: 768px,
+  lg: 992px,
+  xl: 1200px,
 );
 
 // Grid columns
@@ -69,9 +65,18 @@ $transition-collapse: height 0.55s ease;
 
 // Fonts
 $font-size-base: 1rem;
-$font-family-sans-serif: "Avenir", "Muli", -apple-system, BlinkMacSystemFont,
-  "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji",
-  "Segoe UI Emoji", "Segoe UI Symbol";
+$font-family-sans-serif: "Avenir",
+"Muli",
+-apple-system,
+BlinkMacSystemFont,
+"Segoe UI",
+Roboto,
+"Helvetica Neue",
+Arial,
+sans-serif,
+"Apple Color Emoji",
+"Segoe UI Emoji",
+"Segoe UI Symbol";
 $headings-font-weight: 400;
 $small-font-size: 80%;
 
